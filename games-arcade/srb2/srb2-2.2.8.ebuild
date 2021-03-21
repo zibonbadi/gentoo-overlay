@@ -95,7 +95,9 @@ src_install(){
 
 	# Game data
 	install -d "${D}"/usr/share/games/SRB2
-	install -m644 ../{player,music}.dta ../{srb2,zones,patch_music,patch}.pk3 -t "${D}"/usr/share/games/SRB2/
+	install -d "${D}"/usr/share/games/SRB2/models
+	install -m644 ../{player,music}.dta ../{srb2,zones,patch_music,patch}.pk3 ../models.dat -t "${D}"/usr/share/games/SRB2/
+	cp -r -p=mode,timestamps ../models  -t "${D}"/usr/share/games/SRB2/models
 
 	# icon + .desktop
 	install -Dm644 src/sdl/SDL_icon.xpm "${D}"/usr/share/pixmaps/srb2.xpm
