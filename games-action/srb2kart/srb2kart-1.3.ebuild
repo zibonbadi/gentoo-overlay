@@ -43,7 +43,7 @@ REQUIRED_USE="
 
 src_unpack(){
 	unpack ${A}
-	7z x ${DISTDIR}/srb2kart-v${PV//./}-Installer.exe
+	7z x "${DISTDIR}/srb2kart-v${PV//./}-Installer.exe"
 }
 
 src_compile(){
@@ -82,7 +82,7 @@ src_compile(){
 	SYSFLAG="LINUX"
 	if use amd64 || use arm64 ;then SYSFLAG="LINUX64"
 	fi
-	emake SYSFLAG=1 NOUPX=1 NOVERSION=1 ${OPTIONS}
+	emake CPPFLAGS+="-D_FORTIFY_SOURCE=0" SYSFLAG=1 NOUPX=1 NOVERSION=1 ${OPTIONS}
 
 }
 
