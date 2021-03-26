@@ -80,7 +80,7 @@ src_compile(){
 	if use amd64 || use arm64 ;then IS64BIT="64"
 	fi
 	# do not upx binary, do not use version script (optional: show warnings, be verbose)
-	emake LINUX$IS64BIT=1 NOUPX=1 NOVERSION=1 ${OPTIONS} #WARNINGMODE=1 ECHO=1
+	emake CPPFLAGS+="-D_FORTIFY_SOURCE=0" LINUX$IS64BIT=1 NOUPX=1 NOVERSION=1 ${OPTIONS} #WARNINGMODE=1 ECHO=1
 
 }
 
