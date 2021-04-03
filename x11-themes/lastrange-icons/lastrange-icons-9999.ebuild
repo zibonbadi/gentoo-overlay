@@ -24,7 +24,7 @@ REQUIRED_USE=""
 
 src_install(){
 	insinto "/usr/share/icons/${PN}"
-	doins  index.theme scalable/
+	doins -r scalable/ index.theme
 }
 
 pkg_postinst(){
