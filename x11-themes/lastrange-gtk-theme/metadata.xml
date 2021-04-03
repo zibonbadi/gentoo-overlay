@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zibonbadi@gmail.com</email>
+		<name>Zibon Badi</name>
+	</maintainer>
+	<longdescription>
+		A clean, simple GTK/XFCE theme for easy and focused computing. Originally
+		developed for dogfooding, the theme aims to be simple in both design and
+		implementation while keeping a distinctly Unix-like aesthetic ...with
+		some modern quality-of-life considerations.
+
+		The name is a reference to Tom LaStrange, the inventor of the TWM window
+		manager, which served as the main inspiration for the desktop theme.
+		Other influences include printed paper, the Athena widget library and
+		the Amiga Workbench
+	</longdescription>
+	<upstream>
+		<bugs-to>https://github.com/zibonbadi/gentoo-overlay</bugs-to>
+	</upstream>
+	<use>
+	</use>
+</pkgmetadata>
