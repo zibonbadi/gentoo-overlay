@@ -1,0 +1,18 @@
+# Copyright 1999-2021 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+# Keep them sorted
+
+
+curl - Add support for client-side URL transfer library
+gme - Enable GME (Game Music Emulation)
+image - Enable SDL2_Image
+mixer - Enable SDL2_Mixer
+nasm - Enable NASM assembly optimizations (x86, amd64 only)
+nls - Add Native Language Support (using gettext - GNU locale utilities)
+opengl - Add support for OpenGL (3D graphics)
+openmpt - Enable libopenmpt (Amiga-style tracker music)
+png - Add support for libpng (PNG images)
+sdl2 - Enable SDL2 frontend
+yasm - Replace NASM with YASM assembly (x86, amd64 only)
+zlib - Add support for zlib (de)compression
