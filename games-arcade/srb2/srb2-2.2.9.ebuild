@@ -2,19 +2,17 @@
 # Distributed under the terms of the GNU General Public License v2
 
 # Maintainer: Zibon Badi
-# Based on the 2.2.8 PKGBUILD script by JJK16 ( https://gist.github.com/JJK96/106257f93e3a67813075d169a1ac9fb4 )
 
 EAPI=7
 
 DESCRIPTION="A 3D Sonic fan game based off of Doom Legacy (aka \"Sonic Robo Blast 2\")"
 HOMEPAGE="http://www.srb2.org/"
-SRC_URI="https://github.com/STJr/SRB2/archive/SRB2_release_${PV}.tar.gz https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV}-Full.zip"
+SRC_URI="https://github.com/STJr/SRB2/archive/SRB2_release_${PV}.tar.gz https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV//./}-Full.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 
-#S="${WORKDIR}/${P}"
 S="${WORKDIR}/SRB2-SRB2_release_${PV}"
 
 RDEPEND="
