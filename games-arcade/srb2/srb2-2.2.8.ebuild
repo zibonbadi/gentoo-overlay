@@ -12,7 +12,7 @@ SRC_URI="https://github.com/STJr/SRB2/archive/SRB2_release_${PV}.tar.gz https://
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 
 #S="${WORKDIR}/${P}"
 S="${WORKDIR}/SRB2-SRB2_release_${PV}"
