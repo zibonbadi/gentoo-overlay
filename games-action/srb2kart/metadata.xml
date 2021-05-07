@@ -19,17 +19,41 @@
 		<bugs-to>https://github.com/zibonbadi/gentoo-overlay</bugs-to>
 	</upstream>
 	<use>
-		<flag name='curl'>Enable Curl support (needed for Master Server)</flag>
-		<flag name='gme'>Enable GME (Game Music Emulation)</flag>
-		<flag name='image'>Enable SDL2_Image</flag>
-		<flag name='mixer'>Enable SDL2_Mixer</flag>
-		<flag name='nasm'>Enable NASM assembly optimizations (x86, amd64 only)</flag>
-		<flag name='opengl'>Enable OpenGL hardware renderer</flag>
-		<flag name='openmpt'>Enable libopenmpt (Amiga-style tracker music)</flag>
-		<flag name='png'>Enable libpng (PNG screenshots)</flag>
-		<flag name='nls'>Enable Native Language Support based on GNU Gettext</flag>
-		<flag name='sdl2'>Enable SDL2 frontend</flag>
-		<flag name='yasm'>Replace NASM with YASM assembly (x86, amd64 only)</flag>
-		<flag name='zlib'>Enable zlib compression (might be necessary in netgames)</flag>
+		<flag name='curl'>
+			Enable Curl support (needed for Master Server)
+		</flag>
+		<flag name='gme'>
+			Enable GME (Game Music Emulation)
+		</flag>
+		<flag name='image'>
+			Enable SDL2_Image
+		</flag>
+		<flag name='mixer'>
+			Enable SDL2_Mixer
+		</flag>
+		<flag name='nasm'>
+			Enable NASM assembly optimizations (x86, amd64 only)
+		</flag>
+		<flag name='opengl'>
+			Enable OpenGL hardware renderer
+		</flag>
+		<flag name='openmpt'>
+			Enable libopenmpt (Amiga-style tracker music)
+		</flag>
+		<flag name='png'>
+			Enable libpng (PNG screenshots)
+		</flag>
+		<flag name='nls'>
+			Enable Native Language Support based on GNU Gettext
+		</flag>
+		<flag name='sdl2'>
+			Enable SDL2 frontend
+		</flag>
+		<flag name='yasm'>
+			Replace NASM with YASM assembly (x86, amd64 only)
+		</flag>
+		<flag name='zlib'>
+			Enable zlib compression (might be necessary in netgames)
+		</flag>
 	</use>
 </pkgmetadata>
