@@ -7,7 +7,7 @@ EAPI=7
 
 DESCRIPTION="A 3D Sonic fan game based off of Doom Legacy (aka \"Sonic Robo Blast 2\")"
 HOMEPAGE="http://www.srb2.org/"
-SRC_URI="https://github.com/STJr/SRB2/archive/refs/tags/SRB2_release_${PV}.tar.gz https://github.com/STJr/SRB2/releases/download/SRB2_release_2.2.9/SRB2-v229-Full.zip"
+SRC_URI="https://github.com/STJr/SRB2/archive/refs/tags/SRB2_release_${PV}.tar.gz https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV//./}-Full.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
