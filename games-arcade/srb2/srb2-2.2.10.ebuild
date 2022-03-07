@@ -1,19 +1,24 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # Maintainer: Zibon Badi
 
 EAPI=7
 
+inherit git-r3
+
+EGIT_REPO_URI="https://github.com/STJr/SRB2.git"
+EGIT_COMMIT="tags/SRB2_release_${PV}"
+
 DESCRIPTION="A 3D Sonic fan game based off of Doom Legacy (aka \"Sonic Robo Blast 2\")"
 HOMEPAGE="http://www.srb2.org/"
-SRC_URI="https://github.com/STJr/SRB2/archive/refs/tags/SRB2_release_${PV}.tar.gz https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV//./}-Full.zip"
-
+SRC_URI="https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV//./}-Full.zip"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-S="${WORKDIR}/SRB2-SRB2_release_${PV}"
+#S="${WORKDIR}/SRB2-SRB2_release_${PV}"
+#S="${WORKDIR}/SRB2-v${PV//./}-Full"
 
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )
@@ -41,10 +46,16 @@ REQUIRED_USE="
 	mixer? ( sdl2 )
 "
 
+src_unpack(){
+	unpack ${A}
+	git-r3_src_unpack
+	#unzip "${DISTDIR}/SRB2-v${PV//./}-Full.zip" -d "${D}/assets"
+	#"${DISTDIR}/srb2kart-v${PV//./}-Installer.exe"
+}
+
 src_compile(){
 
 	OPTIONS=""
-	cd "src"
 
 	if use image ;then
 		OPTIONS="${OPTIONS} SDL_IMAGE=1"
@@ -78,7 +89,7 @@ src_compile(){
 	if use amd64 || use arm64 ;then IS64BIT="64"
 	fi
 	# do not upx binary, do not use version script (optional: show warnings, be verbose)
-	emake CPPFLAGS+="-D_FORTIFY_SOURCE=0" LINUX$IS64BIT=1 NOUPX=1 NOVERSION=1 ${OPTIONS} #WARNINGMODE=1 ECHO=1
+	emake -C src/ CPPFLAGS+="-D_FORTIFY_SOURCE=0" LINUX$IS64BIT=1 NOUPX=1 NOVERSION=1 ${OPTIONS} WARNINGMODE=1 #ECHO=1
 
 }
 
@@ -89,7 +100,7 @@ src_install(){
 	fi
 
 	# Binary
-	install -Dm755 bin/$ARCHDIR/Release/lsdl2srb2 "${D}"/usr/bin/srb2
+	install -Dm755 bin/lsdl2srb2 "${D}"/usr/bin/srb2
 
 	# Game data
 	install -d "${D}"/usr/share/games/SRB2
