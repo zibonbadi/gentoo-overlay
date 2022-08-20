@@ -3,17 +3,23 @@
 
 # Maintainer: Zibon Badi
 
-EAPI=7
+EAPI=8
+
+inherit git-r3
+
+EGIT_REPO_URI="https://github.com/STJr/Kart-Public.git"
+EGIT_COMMIT="tags/v${PV}"
+
 DESCRIPTION="A kart racing game based on the 3D Sonic the Hedgehog fangame Sonic Robo Blast 2"
 HOMEPAGE="https://mb.srb2.org/threads/srb2kart.25868/"
-SRC_URI="https://github.com/STJr/Kart-Public/archive/refs/tags/v${PV}.tar.gz https://github.com/STJr/Kart-Public/releases/download/v${PV}/srb2kart-v${PV//./}-Installer.exe"
-
+#SRC_URI="https://github.com/STJr/Kart-Public/releases/download/v${PV}/srb2kart-v${PV//./}-Installer.exe"
+SRC_URI="https://github.com/STJr/Kart-Public/releases/download/v${PV}/AssetsLinuxOnly.zip"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 #S="${WORKDIR}/${P}"
-S="${WORKDIR}/Kart-Public-${PV}"
+#S="${WORKDIR}/Kart-Public-${PV}"
 
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )
@@ -43,6 +49,7 @@ REQUIRED_USE="
 
 src_unpack(){
 	unpack ${A}
+	git-r3_src_unpack
 	7z x "${DISTDIR}/srb2kart-v${PV//./}-Installer.exe"
 }
 
