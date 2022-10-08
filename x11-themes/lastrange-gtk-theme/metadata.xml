@@ -19,6 +19,4 @@
 	<upstream>
 		<bugs-to>https://github.com/zibonbadi/gentoo-overlay</bugs-to>
 	</upstream>
-	<use>
-	</use>
 </pkgmetadata>
