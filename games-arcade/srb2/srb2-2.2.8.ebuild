@@ -35,7 +35,7 @@ BDEPEND="
 	nasm? ( dev-lang/nasm )
 "
 
-IUSE="+sdl2 +image +mixer +curl +png nls opengl openmpt gme +nasm -yasm +zlib"
+IUSE="+sdl2 +image +mixer +curl +png nls opengl openmpt gme +nasm yasm +zlib"
 REQUIRED_USE="
 	x86? ( ?? ( yasm nasm ) )
 	amd64? ( ?? ( yasm nasm ) )

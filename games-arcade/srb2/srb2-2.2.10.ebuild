@@ -17,9 +17,6 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-#S="${WORKDIR}/SRB2-SRB2_release_${PV}"
-#S="${WORKDIR}/SRB2-v${PV//./}-Full"
-
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )
 	image? ( media-libs/sdl2-image )
@@ -38,7 +35,7 @@ BDEPEND="
 	nasm? ( dev-lang/nasm )
 "
 
-IUSE="+sdl2 +image +mixer +curl +png nls opengl openmpt gme +nasm -yasm +zlib"
+IUSE="+sdl2 +image +mixer +curl +png nls opengl openmpt gme +nasm yasm +zlib"
 REQUIRED_USE="
 	x86? ( ?? ( yasm nasm ) )
 	amd64? ( ?? ( yasm nasm ) )
@@ -49,8 +46,6 @@ REQUIRED_USE="
 src_unpack(){
 	unpack ${A}
 	git-r3_src_unpack
-	#unzip "${DISTDIR}/SRB2-v${PV//./}-Full.zip" -d "${D}/assets"
-	#"${DISTDIR}/srb2kart-v${PV//./}-Installer.exe"
 }
 
 src_compile(){
