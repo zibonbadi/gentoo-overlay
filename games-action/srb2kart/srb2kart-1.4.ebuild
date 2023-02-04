@@ -12,7 +12,7 @@ EGIT_COMMIT="tags/v${PV}"
 
 DESCRIPTION="A kart racing game based on the 3D Sonic the Hedgehog fangame Sonic Robo Blast 2"
 HOMEPAGE="https://mb.srb2.org/threads/srb2kart.25868/"
-SRC_URI="https://github.com/STJr/Kart-Public/archive/refs/tags/v${PV}.tar.gz https://github.com/STJr/Kart-Public/releases/download/v${PV}/srb2kart-v${PV//./}-Data.zip"
+SRC_URI="https://github.com/STJr/Kart-Public/archive/refs/tags/v${PV}.tar.gz -> ${PF}.tar.gz https://github.com/STJr/Kart-Public/releases/download/v${PV}/srb2kart-v${PV//./}-Data.zip"
 
 LICENSE="GPL-2"
 SLOT="0"
