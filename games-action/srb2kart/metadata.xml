@@ -17,6 +17,7 @@
 	</longdescription>
 	<upstream>
 		<bugs-to>https://github.com/zibonbadi/gentoo-overlay</bugs-to>
+		<remote-id type="github">STJr/Kart-Public</remote-id>
 	</upstream>
 	<use>
 		<flag name='curl'>

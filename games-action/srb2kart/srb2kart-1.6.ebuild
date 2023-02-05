@@ -1,19 +1,21 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # Maintainer: Zibon Badi
 
-EAPI=7
+EAPI=8
+
+inherit git-r3
+
+EGIT_REPO_URI="https://github.com/STJr/Kart-Public.git"
+EGIT_COMMIT="tags/v${PV}"
+
 DESCRIPTION="A kart racing game based on the 3D Sonic the Hedgehog fangame Sonic Robo Blast 2"
 HOMEPAGE="https://mb.srb2.org/threads/srb2kart.25868/"
-SRC_URI="https://github.com/STJr/Kart-Public/archive/refs/tags/v${PV}.tar.gz -> ${PF}.tar.gz https://github.com/STJr/Kart-Public/releases/download/v${PV}/srb2kart-v${PV//./}-Installer.exe"
-
+SRC_URI="https://github.com/STJr/Kart-Public/releases/download/v${PV}/AssetsLinuxOnly.zip -> AssetsLinuxOnly-v${PV}.zip"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
-#S="${WORKDIR}/${P}"
-S="${WORKDIR}/Kart-Public-${PV}"
 
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )
@@ -27,7 +29,7 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
-	app-arch/p7zip
+	app-arch/unzip
 	opengl? ( media-libs/mesa media-libs/glu )
 	yasm? ( dev-lang/yasm )
 	nasm? ( dev-lang/nasm )
@@ -43,7 +45,9 @@ REQUIRED_USE="
 
 src_unpack(){
 	unpack ${A}
-	7z x "${DISTDIR}/srb2kart-v${PV//./}-Installer.exe"
+	git-r3_src_unpack
+	#7z x "${DISTDIR}/srb2kart-v${PV//./}-Installer.exe"
+	#unzip "${DISTDIR}/AssetsLinuxOnly.zip" -d .
 }
 
 src_compile(){
@@ -97,7 +101,7 @@ src_install(){
 
 	# Game data
 	install -d "${D}"/usr/share/games/SRB2Kart
-	install -m644 ../{textures,gfx,music,sounds,chars,bonuschars,maps,patch}.kart ../srb2.srb ../mdls.dat -t "${D}"/usr/share/games/SRB2Kart/
+	install -m644 "${WORKDIR}"/{textures,gfx,music,sounds,chars,bonuschars,maps}.kart "${WORKDIR}"/srb2.srb "${WORKDIR}"/mdls.dat -t "${D}"/usr/share/games/SRB2Kart/
 
 	cp -r --preserve=mode,timestamps ../mdls  -t "${D}"/usr/share/games/SRB2Kart
 

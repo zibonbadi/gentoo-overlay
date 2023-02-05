@@ -12,7 +12,8 @@
 		Let's run SRB2 the Gentoo way (TwT).
 	</longdescription>
 	<upstream>
-		<bugs-to>https://github.com/zibonbadi/gentoo-overlay</bugs-to>
+		<bugs-to>https://github.com/STJr/SRB2</bugs-to>
+		<remote-id type="github">STJr/SRB2</remote-id>
 	</upstream>
 	<use>
 		<flag name='curl'>Enable Curl support (needed for Master Server)</flag>
