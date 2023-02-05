@@ -15,7 +15,6 @@ HOMEPAGE="http://www.srb2.org/"
 SRC_URI="https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV//./}-Full.zip"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )

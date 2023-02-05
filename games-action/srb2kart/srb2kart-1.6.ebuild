@@ -15,7 +15,6 @@ HOMEPAGE="https://mb.srb2.org/threads/srb2kart.25868/"
 SRC_URI="https://github.com/STJr/Kart-Public/releases/download/v${PV}/AssetsLinuxOnly.zip -> AssetsLinuxOnly-v${PV}.zip"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )
