@@ -5,19 +5,17 @@
 
 EAPI=8
 
+inherit git-r3
+
+EGIT_REPO_URI="https://github.com/STJr/SRB2.git"
+EGIT_COMMIT="tags/SRB2_release_${PV}"
+
 DESCRIPTION="A 3D Sonic fan game based off of Doom Legacy (aka \"Sonic Robo Blast 2\")"
 HOMEPAGE="http://www.srb2.org/"
-SRC_URI="
-https://github.com/STJr/${PN}/archive/refs/tags/SRB2_release_${PV}.tar.gz -> ${P}.tar.gz
-https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV//./}-Full.zip -> ${P}-assets.zip
-"
+SRC_URI="https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV//./}-Full.zip"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-
-#S="${WORKDIR}/SRB2_release_${PV}"
-#S="${WORKDIR}/${P}"
-S="${WORKDIR}/SRB2-SRB2_release_${PV}"
 
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )
@@ -44,6 +42,11 @@ REQUIRED_USE="
 	image? ( sdl2 )
 	mixer? ( sdl2 )
 "
+
+src_unpack(){
+	unpack ${A}
+	git-r3_src_unpack
+}
 
 src_compile(){
 
