@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zibonbadi@github.com</email>
+		<name>Zibon Badi</name>
+	</maintainer>
+	<longdescription>
+		A map making tool for Sonic Robo Blast 2,
+		forked from Ultimate Doom Builder.
+
+		For bug reports etc., please visit the upstream at
+		https://git.do.srb2.org/STJr/UltimateZoneBuilder
+	</longdescription>
+	<upstream>
+		<bugs-to>https://git.do.srb2.org/STJr/UltimateZoneBuilder</bugs-to>
+		<remote-id type="gitlab">STJr/SRB2</remote-id>
+	</upstream>
+</pkgmetadata>
