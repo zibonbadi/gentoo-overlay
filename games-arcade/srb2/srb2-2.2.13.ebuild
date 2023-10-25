@@ -15,7 +15,6 @@ HOMEPAGE="http://www.srb2.org/"
 SRC_URI="https://github.com/STJr/SRB2/releases/download/SRB2_release_${PV}/SRB2-v${PV//./}-Full.zip"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )
@@ -99,7 +98,8 @@ src_install(){
 
 	# Game data
 	install -d "${D}"/usr/share/games/SRB2
-	install -m644 ../{player,music}.dta ../{srb2,zones,patch_music,patch}.pk3 ../models.dat -t "${D}"/usr/share/games/SRB2/
+	install -m644 ../{player,music}.dta \
+		../{srb2,zones,patch_music,patch}.pk3 ../models.dat -t "${D}"/usr/share/games/SRB2/
 	cp -r --preserve=mode,timestamps ../models  -t "${D}"/usr/share/games/SRB2/
 
 	# icon + .desktop

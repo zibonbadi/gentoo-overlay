@@ -15,7 +15,6 @@ HOMEPAGE="https://mb.srb2.org/threads/srb2kart.25868/"
 SRC_URI="https://github.com/STJr/Kart-Public/releases/download/v${PV}/AssetsLinuxOnly.zip -> AssetsLinuxOnly-v${PV}.zip"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
 	sdl2? ( media-libs/libsdl2 )
@@ -101,7 +100,8 @@ src_install(){
 
 	# Game data
 	install -d "${D}"/usr/share/games/SRB2Kart
-	install -m644 ../{textures,gfx,music,sounds,chars,bonuschars,maps,patch}.kart ../srb2.srb ../mdls.dat -t "${D}"/usr/share/games/SRB2Kart/
+	install -m644 ../{textures,gfx,music,sounds,chars,bonuschars,maps,patch}.kart \
+		../srb2.srb ../mdls.dat -t "${D}"/usr/share/games/SRB2Kart/
 
 	cp -r --preserve=mode,timestamps ../mdls  -t "${D}"/usr/share/games/SRB2Kart
 

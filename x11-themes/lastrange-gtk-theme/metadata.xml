@@ -18,5 +18,6 @@
 	</longdescription>
 	<upstream>
 		<bugs-to>https://github.com/zibonbadi/gentoo-overlay</bugs-to>
+		<remote-id type="github">zibonbadi/lastrange-gtk-theme</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -97,7 +97,8 @@ src_install(){
 
 	# Game data
 	install -d "${D}"/usr/share/games/SRB2Kart
-	install -m644 ../{textures,gfx,music,sounds,chars,bonuschars,maps,patch}.kart ../srb2.srb ../mdls.dat -t "${D}"/usr/share/games/SRB2Kart/
+	install -m644 ../{textures,gfx,music,sounds,chars,bonuschars,maps,patch}.kart \
+		../srb2.srb ../mdls.dat -t "${D}"/usr/share/games/SRB2Kart/
 
 	cp -r --preserve=mode,timestamps ../mdls  -t "${D}"/usr/share/games/SRB2Kart
 
